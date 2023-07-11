@@ -16,4 +16,8 @@ const fs=require("fs");
 fs.appendFile("read.txt"," This is appended", (err)=>{
     console.log("task complete!");
     console.log(err);
-})
+});
+
+fs.readFile("read.txt", "utf-8" ,(err,data) =>{
+    console.log(data);
+});
