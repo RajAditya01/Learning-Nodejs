@@ -1,5 +1,6 @@
 //CRUD
-const fs = require("fs")
+const fs = require("fs");
+fs.mkdirSync("chalange");
 fs.writeFileSync("aditya.txt" , "hii this is me :)");
 fs.appendFileSync("aditya.txt" , " this is append file");
 
