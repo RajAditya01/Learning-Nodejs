@@ -1,10 +1,9 @@
 const fs=require("fs");
-const { start } = require("repl");
 
-fs.writeFile("read.txt","today is awsome day :)",(err) =>{
-    console.log("files is created");
-    console.log(err);
-} );
+// fs.writeFile("read.txt","today is awsome day :)",(err) =>{
+//     console.log("files is created");
+//     console.log(err);
+// } );
 
 
 // we pass them a function as an arrugunment - a callback -
@@ -13,3 +12,8 @@ fs.writeFile("read.txt","today is awsome day :)",(err) =>{
 // the operation complete successfully.Now we need to say what to do when fs.writefile
 // has completed (even if it's nothing) and start
 // checking for errors.
+
+fs.appendFile("read.txt"," This is appended", (err)=>{
+    console.log("task complete!");
+    console.log(err);
+})
