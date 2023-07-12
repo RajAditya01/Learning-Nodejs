@@ -11,3 +11,7 @@
     var a="aditya";
     console.log(a);//isko bahr use ni kr skte
 })();
+
+//
+console.log(__filename);
+console.log(__dirname);
