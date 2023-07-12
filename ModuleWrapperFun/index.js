@@ -6,7 +6,7 @@
     module.exports ={exporthhscvyuv}
   });
 
-//   Whai is IIFE?
+//   Whai is IIFE?   //Advance js topic
 (function(){
     var a="aditya";
     console.log(a);//isko bahr use ni kr skte
