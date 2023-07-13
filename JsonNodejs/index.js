@@ -9,8 +9,19 @@ const bioData ={
     channel: "Aditya technical",
 }
 
-//convert to jeson
+//convert to json
 const jsonData = JSON.stringify(bioData);
 fs.writeFile("json1.json" , jsonData, (err) => {
     console.log("Done!");
 });
+
+//readfile
+fs.readFile("json1.json", "utf-8", (err,data)=>{
+    console.log(data);
+
+    //convert to object
+    const orgData=JSON.parse(data);
+    console.log(orgData);
+});
+
+
