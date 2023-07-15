@@ -1,30 +1,31 @@
 const nodemailer = require("nodemailer");
 
 const sendMail = async (req, res) => {
-    let testAccount = await  nodemailer.createTestAccount();
-    let transport = await  nodemailer.createTestAccount({
-        host: account.smtp.host,
-        port: account.smtp.port,
-        secure: account.smtp.secure,
-        auth: {
-            user: account.user,
-            pass: account.pass
-        },
-        logger: true,
-        transactionLog: true, // include SMTP traffic in the logs
-        allowInternalNetworkInterfaces: false
-    },
-    {
-        // default message fields
+    let testAccount = await nodemailer.createTestAccount();
 
-        // sender info
-        from: 'Nodemailer <example@nodemailer.com>',
-        headers: {
-            'X-Laziness-level': 1000 // just an example header, no need to use this
-        }
+    // Connect with SMTP
+    let transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        auth: {
+            user: "miracle.casper@ethereal.email",
+            pass: "X5dQmYbQTgyVvFPEWE",
+        },
     });
 
-    res.send("I AM SENDING MAIL...");
-};
+    let info = await transporter.sendMail({
+        from: '"Aditya Raj" <adityavishal903@gmail.com>', // Sender address
+        to: "adityavishal903@outlook.com", // List of receivers
+        subject: "Hello ✔", // Subject line
+        text: "Hello Aditya raj", // Plain text body
+        html: "<b>Hello Aditya</b>", // HTML body
+    });
+    console.log("Message sent: %s", info.messageId);
+    console.log("Email sent successfully:", info);
 
-module.exports= sendMail;
+
+    res.json(info);
+};
+//console.log("Email sent successfully:", info);
+
+module.exports = sendMail;
