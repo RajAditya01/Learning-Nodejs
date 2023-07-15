@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const PORT = 5500;
 
+const  sendMail= require("./controllers/sendMail");
+
 app.get("/", (req, res) =>{
     res.send("I am server...");
 });
+
+app.get("/sendmail",sendMail)
 
 const start = async () => {
     try {
