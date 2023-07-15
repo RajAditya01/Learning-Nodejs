@@ -26,6 +26,4 @@ const sendMail = async (req, res) => {
 
     res.json(info);
 };
-//console.log("Email sent successfully:", info);
-
 module.exports = sendMail;
